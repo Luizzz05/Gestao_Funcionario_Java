@@ -10,8 +10,6 @@ import model.Funcionario;
 
 
 public class Funcao {
-
-	Funcionario f = new Funcionario();
 	
     private List<Funcionario> funcionarios = new ArrayList<>();
     public void adicionarFuncionario(Funcionario funcionario) {
@@ -21,7 +19,6 @@ public class Funcao {
 
     public void printDados() {
         while (true) {
-            int idade;
             String sidade;
 
             // Criar um novo objeto Funcionario em cada iteração
@@ -98,7 +95,7 @@ public class Funcao {
         boolean encontrouFuncionario = false; // Variável para verificar se pelo menos um funcionário foi encontrado
 
         for (Funcionario funcionario : funcionarios) {
-            if (funcionario.getCidade().equals(cidade)) {
+            if (funcionario.getCidade().equalsIgnoreCase(cidade)) {
                 encontrouFuncionario = true;
                 // Adicionamos as informações do funcionário ao StringBuilder
                 relatorio.append("Cidade: ").append(funcionario.getCidade()).append("\n")
